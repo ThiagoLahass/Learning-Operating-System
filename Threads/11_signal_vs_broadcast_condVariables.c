@@ -24,10 +24,10 @@ void* car(void* arg) {
     while (fuel < 40) {
         printf("No fuel. Waiting...\n");
         pthread_cond_wait(&condFuel, &mutexFuel);
-        // Equivalent to:
-        // pthread_mutex_unlock(&mutexFuel);
-        // wait for signal on condFuel
-        // pthread_mutex_lock(&mutexFuel);
+            // Equivalent to:
+            // pthread_mutex_unlock(&mutexFuel);
+            // wait for signal on condFuel
+            // pthread_mutex_lock(&mutexFuel);
     }
     fuel -= 40;
     printf("Got fuel. Now left: %d\n", fuel);
